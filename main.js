@@ -74,22 +74,30 @@ function submitOrder(count) {
   } else if (text("我知道了").exists()) {
     toast("关闭我知道了");
     text("我知道了").findOne().parent().click();
+  } else if (text("返回购物车").exists()) {
+    toast("关闭返回购物车");
+    text("返回购物车").findOne().parent().click();
   } else if (text("重新加载").exists()) {
     toast("重新加载");
     text("重新加载").findOne().parent().click();
   } else if (text("立即支付").exists()) {
+    console.log('[ 立即支付 ]', 111)
     text("立即支付").findOne().parent().click();
+  } else if (text("极速支付").exists()) {
+    console.log('[ 极速支付 ]', 222)
+    text("极速支付").findOne().parent().click();
   } else if (text("确认支付").exists()) {
-    const music =
-      "/storage/emulated/0/netease/cloudmusic/Music/Joel Hanson Sara Groves - Traveling Light.mp3";
+    // const music =
+    //   "/storage/emulated/0/netease/cloudmusic/Music/Joel Hanson Sara Groves - Traveling Light.mp3";
+    const music = "/storage/emulated/0/netease/cloudmusic/Music/赵紫骅 - 可乐.mp3";
     media.playMusic(music);
     sleep(media.getMusicDuration());
   } else {
     toast("抢个屁！");
     exit;
   }
-  sleep(800);
-  if (count > 10000) {
+  sleep(500);
+  if (count > 1000) {
     toast("没抢到");
     exit;
   }
